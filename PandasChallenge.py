@@ -12,6 +12,13 @@ student_data = pd.read_csv(student_data_to_load)
 # Combine the data into a single dataset.  
 school_data_complete = pd.merge(student_data, school_data, how="left", on=["school_name", "school_name"])
 
+School_Count = len(school_data_complete["school_name"].unique())
 
-df = pd.DataFrame(school_data_complete, columns = ["Total Schools"])
+Student_Count = len(school_data_complete["Student ID"])
+
+#Need To Figure Out A Way Of Taking Budget From Each School, Then Add
+
+Average_Math_Score = sum(school_data_complete["math_score"])/Student_Count
+
+Average_Reading_Score = sum(school_data_complete["reading_score"])/Student_Count
 
