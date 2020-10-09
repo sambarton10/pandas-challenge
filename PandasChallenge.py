@@ -30,4 +30,6 @@ percent_pass_math = (math_pass_criteria['math_score'].count()/Student_Count)*100
 reading_pass_criteria = school_data_complete[school_data_complete.reading_score >= 70]
 percent_pass_reading = (reading_pass_criteria['reading_score'].count()/Student_Count)*100
 
+#Finding overall passing rate
+overall_passing_rate = school_data_complete[(school_data_complete['math_score'] >= 70) & (school_data_complete['reading_score'] >=70)]['StudentID'].count()/Student_Count*100
 
