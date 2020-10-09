@@ -16,9 +16,18 @@ School_Count = len(school_data_complete["school_name"].unique())
 
 Student_Count = len(school_data_complete["Student ID"])
 
-#Need To Figure Out A Way Of Taking Budget From Each School, Then Add
+school_budget = sum(school_data_complete["budget"].unique())
 
 Average_Math_Score = sum(school_data_complete["math_score"])/Student_Count
 
 Average_Reading_Score = sum(school_data_complete["reading_score"])/Student_Count
+
+#Finding the Percentage Of Students Who Passed Math
+math_pass_criteria = school_data_complete[school_data_complete.reading_score >=70]
+percent_pass_math = (math_pass_criteria['math_score'].count()/Student_Count)*100
+
+#Finding the Percentage Of Students Who Passed Math
+reading_pass_criteria = school_data_complete[school_data_complete.reading_score >= 70]
+percent_pass_reading = (reading_pass_criteria['reading_score'].count()/Student_Count)*100
+
 
