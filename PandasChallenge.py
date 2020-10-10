@@ -33,3 +33,13 @@ percent_pass_reading = (reading_pass_criteria['reading_score'].count()/Student_C
 #Finding overall passing rate
 overall_passing_rate = school_data_complete[(school_data_complete['math_score'] >= 70) & (school_data_complete['reading_score'] >=70)]['StudentID'].count()/Student_Count*100
 
+district_summaryDF = pd.DataFrame({"School Count": [School_Count],
+                                   "Student Count": Student_Count,
+                                   "Total Budget": school_budget,
+                                   "Average Math Score": Average_Math_Score,
+                                   "Average Reading Score": Average_Reading_Score,
+                                   "% Passing Math": percent_pass_math,
+                                   "% Passing Reading": percent_pass_reading,
+                                   "% Passing Overall": overall_passing_rate})
+                                   
+
